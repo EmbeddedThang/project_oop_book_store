@@ -15,6 +15,11 @@ private:
 public:
     HanhVi(Database &d);
     void Mua();
-
+    void themsach();
+    void timsachtheoten();
+    void timsachtheotheloai();
+    void timsachtheotacgia();
+    void xoasach();
+    void suagia();
 };
 #endif

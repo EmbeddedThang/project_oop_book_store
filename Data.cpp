@@ -32,9 +32,6 @@ void Data::Laydata(std::string filename) {
         }
         else if (line.find("So luong:") != string::npos) {
             s.setSoLuong(stoi(line.substr(line.find(":") + 2)));
-        }
-        else if (line.find("Ma don hang:") != string::npos) {
-            s.setMaDonHang(line.substr(line.find(":") + 2));
             ds.database_push(s);
             s = Sach();
         }
@@ -51,7 +48,6 @@ void Data::xuatdata(){
         fout << "The loai: " << ds.getDulieu()[i].getTheLoai() << endl;
         fout << "Gia: " << ds.getDulieu()[i].getGia() << endl;
         fout << "So luong: " << ds.getDulieu()[i].getSoLuong() << endl;
-        fout << "Ma don hang: " << ds.getDulieu()[i].getMaDonHang() << endl;
         fout << "\n";
     }
     fout.close();

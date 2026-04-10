@@ -4,7 +4,7 @@
 #include <iostream>
 #include <fstream>
 #include <vector>
-#include <iomanip>
+#include <iomanip> 
 using namespace std;
 void Database::database_push(Sach s){
     dulieu.push_back(s);
@@ -17,7 +17,6 @@ cout << left
     << setw(20) << "The loai"
     << setw(12) << "Gia"
     << setw(10) << "So luong"
-    << setw(15) << "Ma don hang"
     << endl;
 cout << string(125, '-') << endl;
 for (int i = 0; i < dulieu.size(); i++) {
@@ -28,7 +27,6 @@ for (int i = 0; i < dulieu.size(); i++) {
         << setw(20) << dulieu[i].getTheLoai()
         << setw(12) << fixed << setprecision(0) << dulieu[i].getGia()
         << setw(10) << dulieu[i].getSoLuong()
-        << setw(15) << dulieu[i].getMaDonHang()
         << endl;
 }
 }
@@ -37,4 +35,8 @@ int Database::getSizedatabase() {
 }
 vector<Sach>& Database::getDulieu() {
     return dulieu;
+}
+void Database::database_push_donhang(int x)
+{
+    madonhang.push_back(x);
 }

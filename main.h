@@ -3,6 +3,8 @@
 #include"Data.h"
 #include"Database.h"
 #include"Sach.h"
+#include"hanhvi.h"
+#include"doituong.h"
 #include <string>
 #include <iostream>
 #include <fstream>
