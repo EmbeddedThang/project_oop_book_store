@@ -9,7 +9,7 @@
 #include <vector>   
 #include <iomanip>
 using namespace std;
-class HanhVi {
+class HanhVi{
 private:
     Database& db;
 public:

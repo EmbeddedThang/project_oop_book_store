@@ -10,16 +10,21 @@
 #include <vector>   
 #include <iomanip>
 using namespace std;
-class staff:public HanhVi{
+class staff:public HanhVi,public Data{
     Database& db;
 public:
     staff(Database &d);
     void quanli();
 };
-class customer:public HanhVi{
+class customer:public HanhVi,public Data{
     Database &db;
 public:
     customer(Database &d);
     void thuchienmua();
+};
+class doituong:public staff,customer{
+public:
+    doituong(Database &d);
+    void thuchien();
 };
 #endif

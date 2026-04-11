@@ -11,7 +11,7 @@ int main()
     ld.Laydata("danh_sach_sach.txt");
     db.database_show();
     ld.xuatdata();
-    staff st(db);
-    st.quanli();
+    doituong dt(db);
+    dt.thuchien();
     return 0;
 }

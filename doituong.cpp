@@ -8,8 +8,8 @@
 #include <fstream>
 #include <vector>   
 #include <iomanip>
-staff::staff(Database &d):HanhVi(d),db(d){}
-customer::customer(Database &d):HanhVi(d),db(d){}
+staff::staff(Database &d):HanhVi(d),Data(d),db(d){}
+customer::customer(Database &d):HanhVi(d),Data(d),db(d){}
 void staff::quanli()
 {
     int chon;
@@ -49,6 +49,7 @@ void staff::quanli()
             break;
         case 0:
             cout << "Thoat chuong trinh.\n";
+            xuatdata();
             break;
         default:
             cout << "Lua chon khong hop le! Vui long chon lai.\n";
@@ -60,4 +61,32 @@ void customer::thuchienmua()
     db.database_show();
     cout<<"Vui long nhap thong tin sach ban muon mua!\n";
     Mua();
+    xuatdata();
+}
+doituong::doituong(Database &d) : staff(d),customer(d){}
+void doituong::thuchien() 
+{
+    int chon;
+    do{
+        cout<<"Role cua ban la:\n";
+        cout<<"1.Nguoi mua\n";
+        cout<<"2.Quan li\n";
+        cout<<"0.Thoat\n";
+        cout<<"Moi ban chon Role: ";
+        cin>>chon;
+        switch (chon) {
+        case 2:
+            quanli();
+            break;
+        case 1:
+            thuchienmua();
+            break;
+        case 0:
+            cout<<"Cam on!";
+            break;
+        default:
+            cout<<"xin cam on";
+            break;
+        }
+    }while (chon!=0);
 }

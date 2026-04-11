@@ -8,14 +8,13 @@ HanhVi::HanhVi(Database &d) : db(d) {}
 void HanhVi::Mua() {
     string tensach;
     bool timthay = false;
-    cin.ignore();
     cout << "Nhap ten sach muon mua: ";
     getline(cin, tensach);
     vector<Sach>& danhsach = db.getDulieu();
     for (int i = 0; i < (int)danhsach.size(); i++) {
         if (danhsach[i].getTen() == tensach) {
             timthay = true;
-            cout << "\nThong tin sach: " << danhsach[i].getTen() << endl;
+            cout << "Thong tin sach: " << danhsach[i].getTen() << endl;
             cout << "Gia: " << fixed << setprecision(0) << danhsach[i].getGia() << " | Ton kho: " << danhsach[i].getSoLuong() << endl;
             if (danhsach[i].getSoLuong() <= 0) {
                 cout << "Xin loi, sach nay hien da het hang!\n";
@@ -33,8 +32,12 @@ void HanhVi::Mua() {
             else {
                 int slMoi = danhsach[i].getSoLuong() - slMua;
                 danhsach[i].setSoLuong(slMoi);
-                double tongTien = slMua * danhsach[i].getGia();                    
-                cout << "\n===== HOA DON XUAT =====\n";
+                db.database_show();
+                double tongTien = slMua * danhsach[i].getGia(); 
+                cout<<"Hoa don da duoc xuat vui long kiem tra thong tin!";                   
+                remove("hoa_don.txt");
+                freopen("hoa_don.txt","w",stdout);
+                cout << "===== HOA DON XUAT =====\n";
                 cout << "Ten sach: " << danhsach[i].getTen() << endl;
                 cout << "So luong: " << slMua << endl;
                 cout << "Don gia:  " << fixed << setprecision(0) << danhsach[i].getGia() << endl;
