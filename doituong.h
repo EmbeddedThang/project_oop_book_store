@@ -13,20 +13,22 @@
 #include <ctime>
 using namespace std;
 class staff:public HanhVi,public Data{
-    Database& db;
+    Database_Sach& db;
+    Database_Donhang& dh;
 public:
-    staff(Database &d);
+    staff(Database_Sach &d, Database_Donhang &x);
     void quanli();
 };
 class customer:public HanhVi,public Data{
-    Database &db;
+    Database_Sach& db;
+    Database_Donhang& dh;
 public:
-    customer(Database &d);
+    customer(Database_Sach &d,Database_Donhang &x);
     void thuchienmua();
 };
 class doituong:public staff,customer{
 public:
-    doituong(Database &d);
+    doituong(Database_Sach &d,Database_Donhang &x);
     void thuchien();
 };
 #endif

@@ -51,12 +51,12 @@ int Database_Donhang::getSizedatabase(){
 void Database_Donhang::database_show(){
     for(int i = 0;i<ma.size();i++){
         cout << "===== HOA DON XUAT =====\n";
-        cout << "Ma hoa don: "<<mahoadon<<endl;
-        cout << "Ten sach: " << danhsach[i].getTen() << endl;
-        cout << "So luong: " << slMua << endl;
-        cout << "Don gia:  " << fixed << setprecision(0) << danhsach[i].getGia() << endl;
+        cout << "Ma hoa don: "<<ma[i].id_donhang<<endl;
+        cout << "Ten sach: " << ma[i].ten << endl;
+        cout << "So luong: " << ma[i].soluong << endl;
+        cout << "Don gia:  " << fixed << setprecision(0) << ma[i].dongia << endl;
         cout << "------------------------\n";
-        cout << "TONG TIEN: " << fixed << setprecision(0) << tongTien << " VND\n";
+        cout << "TONG TIEN: " << fixed << setprecision(0) << ma[i].tien << " VND\n";
         cout << "Giao dich thanh cong! So luong ton kho da duoc cap nhat.\n";
     }
 }

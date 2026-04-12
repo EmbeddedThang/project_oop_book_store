@@ -10,9 +10,9 @@
 #include <ctime>
 using namespace std;
 class Data{
-    Database &ds;
+    Database_Sach &ds;
 public:
-    Data(Database &db);
+    Data(Database_Sach &db);
     void Laydata(std::string filename);
     void xuatdata();
 };
