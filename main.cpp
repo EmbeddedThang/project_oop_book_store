@@ -8,12 +8,13 @@
 #include <ctime>
 int main()
 {
-    Database db;
-    Data ld(db);
+    Database_Sach dbs;
+    Database_Donhang dbd;
+    Data ld(dbs,dbd);
     ld.Laydata("danh_sach_sach.txt");
-    db.database_show();
+    dbs.database_show();
     ld.xuatdata();
-    doituong dt(db);
+    doituong dt(dbs,dbd);
     dt.thuchien();
     return 0;
 }

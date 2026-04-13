@@ -10,8 +10,8 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
-staff::staff(Database_Sach &d,Database_Donhang &x):HanhVi(d,x),Data(d),db(d),dh(x){}
-customer::customer(Database_Sach &d,Database_Donhang &x):HanhVi(d,x),Data(d),db(d),dh(x){}
+staff::staff(Database_Sach &d,Database_Donhang &x):HanhVi(d,x),Data(d,x),db(d),dh(x){}
+customer::customer(Database_Sach &d,Database_Donhang &x):HanhVi(d,x),Data(d,x),db(d),dh(x){}
 void staff::quanli()
 {
     int chon;
@@ -64,6 +64,7 @@ void customer::thuchienmua()
     cout<<"Vui long nhap thong tin sach ban muon mua!\n";
     Mua();
     xuatdata();
+    xuathoadon();
 }
 doituong::doituong(Database_Sach &d,Database_Donhang &x) : staff(d,x),customer(d,x){}
 void doituong::thuchien() 

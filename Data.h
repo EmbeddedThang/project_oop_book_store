@@ -11,9 +11,11 @@
 using namespace std;
 class Data{
     Database_Sach &ds;
+    Database_Donhang &dh;
 public:
-    Data(Database_Sach &db);
+    Data(Database_Sach &db,Database_Donhang &x);
     void Laydata(std::string filename);
     void xuatdata();
+    void xuathoadon();
 };
 #endif

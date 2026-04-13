@@ -7,7 +7,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
-Data::Data(Database_Sach &db) : ds(db) {}
+Data::Data(Database_Sach &db,Database_Donhang &x) : ds(db),dh(x) {}
 void Data::Laydata(std::string filename) {
     ifstream file(filename);
     if (!file.is_open()) {
@@ -53,4 +53,18 @@ void Data::xuatdata(){
         fout << "\n";
     }
     fout.close();
+}
+void Data::xuathoadon(){
+    remove("luutru.txt");
+    ofstream fiout("luutru.txt");
+    for(int i = 0; i < dh.getSizedatabase(); i++){
+        fiout << "===== HOA DON XUAT =====\n";
+        fiout << "Ma hoa don: "<<dh.getDulieu()[i].id_donhang<<endl;
+        fiout << "Ten sach: " <<dh.getDulieu()[i].ten<< endl;
+        fiout << "So luong: " << dh.getDulieu()[i].soluong << endl;
+        fiout << "Don gia:  " << fixed << setprecision(0) << dh.getDulieu()[i].dongia  << endl;
+        fiout << "------------------------\n";
+        fiout << "TONG TIEN: " << fixed << setprecision(0) << dh.getDulieu()[i].tien<< " VND\n";
+    }
+    fiout.close();
 }

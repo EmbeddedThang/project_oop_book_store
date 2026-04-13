@@ -53,7 +53,7 @@ void HanhVi::Mua() {
                 fiout << "TONG TIEN: " << fixed << setprecision(0) << hoadon.tien << " VND\n";
                 fiout << "Giao dich thanh cong! So luong ton kho da duoc cap nhat.\n";
                 dbd.database_push(hoadon);
-                dbs.database_show();
+                dbd.database_show();
                 fiout.close();
             }
             break;

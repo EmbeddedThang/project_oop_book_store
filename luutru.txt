@@ -1,8 +1,14 @@
 ===== HOA DON XUAT =====
+Ma hoa don: 1586
+Ten sach: Sach 52
+So luong: 10
+Don gia:  50000
+------------------------
+TONG TIEN: 500000 VND
+===== HOA DON XUAT =====
 Ma hoa don: 1723
 Ten sach: Sach 52
 So luong: 10
 Don gia:  50000
 ------------------------
 TONG TIEN: 500000 VND
-Giao dich thanh cong! So luong ton kho da duoc cap nhat.
