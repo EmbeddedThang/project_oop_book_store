@@ -17,6 +17,7 @@ private:
     Database_Donhang& dbd;
 public:
     HanhVi(Database_Sach &d, Database_Donhang &c);
+    thoigian layThoigianHienTai();
     void Mua();
     void themsach();
     void timsachtheoten();

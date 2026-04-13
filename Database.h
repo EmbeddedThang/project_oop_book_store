@@ -8,18 +8,27 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+struct thoigian{
+    int ngay;
+    int thang;
+    int nam;
+    int gio;
+    int phut;
+    int giay;
+};
 struct mahanghoa{
     int id_donhang;
     string ten;
     int soluong;
     double dongia;
     double tien;
+    thoigian tg;
 };
 class Database{
 public:
-    virtual void database_push(){}
-    virtual void database_show(){}
-    virtual int getSizedatabase(){}
+    virtual void database_push(){;}
+    virtual void database_show(){;}
+    virtual int getSizedatabase(){;}
     virtual ~Database(){}
 };
 class Database_Sach:public Database{

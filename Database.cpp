@@ -55,6 +55,7 @@ void Database_Donhang::database_show(){
         cout << "Ten sach: " << ma[i].ten << endl;
         cout << "So luong: " << ma[i].soluong << endl;
         cout << "Don gia:  " << fixed << setprecision(0) << ma[i].dongia << endl;
+        cout << "Thoi gian: " << ma[i].tg.ngay << "/" << ma[i].tg.thang << "/" << ma[i].tg.nam << " " << ma[i].tg.gio << ":" << ma[i].tg.phut << ":" << ma[i].tg.giay << endl;
         cout << "------------------------\n";
         cout << "TONG TIEN: " << fixed << setprecision(0) << ma[i].tien << " VND\n";
         cout << "Giao dich thanh cong! So luong ton kho da duoc cap nhat.\n";

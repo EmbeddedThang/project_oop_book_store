@@ -6,6 +6,7 @@
 #include <iomanip>
 #include <cstdlib>
 #include <ctime>
+using namespace std;
 HanhVi::HanhVi(Database_Sach &d, Database_Donhang &c) : dbs(d),dbd(c) {}
 void HanhVi::Mua() {
     string tensach;
@@ -33,14 +34,14 @@ void HanhVi::Mua() {
                 cout << "Khong du so luong trong kho! (Chi con " << danhsach[i].getSoLuong() << " cuon)\n";
             }
             else {
-                int slMoi = danhsach[i].getSoLuong() - hoadon.soluong;
-                danhsach[i].setSoLuong(slMoi);
+                danhsach[i].setSoLuong(danhsach[i].getSoLuong() - hoadon.soluong);
                 dbs.database_show();
                 srand(time(0));
                 hoadon.id_donhang=1000 + rand() % 9000;
                 hoadon.tien = hoadon.soluong * danhsach[i].getGia(); 
                 hoadon.ten = danhsach[i].getTen();
                 hoadon.dongia = danhsach[i].getGia();
+                hoadon.tg = layThoigianHienTai();
                 cout<<"Hoa don da duoc xuat vui long kiem tra thong tin!\n";                   
                 remove("hoa_don.txt");
                 ofstream fiout("hoa_don.txt");
@@ -49,6 +50,7 @@ void HanhVi::Mua() {
                 fiout << "Ten sach: " << hoadon.ten<< endl;
                 fiout << "So luong: " << hoadon.soluong << endl;
                 fiout << "Don gia:  " << fixed << setprecision(0) << hoadon.dongia  << endl;
+                fiout << "Thoi gian: " << hoadon.tg.ngay << "/" << hoadon.tg.thang << "/" << hoadon.tg.nam << " " << hoadon.tg.gio << ":" << hoadon.tg.phut << ":" << hoadon.tg.giay << endl;
                 fiout << "------------------------\n";
                 fiout << "TONG TIEN: " << fixed << setprecision(0) << hoadon.tien << " VND\n";
                 fiout << "Giao dich thanh cong! So luong ton kho da duoc cap nhat.\n";
@@ -191,4 +193,16 @@ void HanhVi::suagia() {
     if (!timthay) {
         cout << "Khong tim thay sach!" << endl;
     }
+}
+thoigian HanhVi::layThoigianHienTai(){
+    time_t now = time(0);
+    tm *ltm = localtime(&now);
+    thoigian tg;
+    tg.ngay = ltm->tm_mday;
+    tg.thang = 1 + ltm->tm_mon;
+    tg.nam = 1900 + ltm->tm_year;
+    tg.gio = ltm->tm_hour;
+    tg.phut = ltm->tm_min;
+    tg.giay = ltm->tm_sec;
+    return tg;
 }

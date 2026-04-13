@@ -63,6 +63,7 @@ void Data::xuathoadon(){
         fiout << "Ten sach: " <<dh.getDulieu()[i].ten<< endl;
         fiout << "So luong: " << dh.getDulieu()[i].soluong << endl;
         fiout << "Don gia:  " << fixed << setprecision(0) << dh.getDulieu()[i].dongia  << endl;
+        fiout << "Thoi gian: " << dh.getDulieu()[i].tg.ngay << "/" << dh.getDulieu()[i].tg.thang << "/" << dh.getDulieu()[i].tg.nam << " " << dh.getDulieu()[i].tg.gio << ":" << dh.getDulieu()[i].tg.phut << ":" << dh.getDulieu()[i].tg.giay << endl;
         fiout << "------------------------\n";
         fiout << "TONG TIEN: " << fixed << setprecision(0) << dh.getDulieu()[i].tien<< " VND\n";
     }
