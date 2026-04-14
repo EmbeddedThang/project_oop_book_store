@@ -27,5 +27,6 @@ public:
     void suagia();
     void thuesach();
     void trasach();
+    void Doanhthu();
 };
 #endif

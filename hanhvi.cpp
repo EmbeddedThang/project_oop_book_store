@@ -46,7 +46,7 @@ void HanhVi::Mua() {
                 cout<<"Hoa don da duoc xuat vui long kiem tra thong tin!\n";                   
                 remove("hoa_don.txt");
                 ofstream fiout("hoa_don.txt");
-                fiout << "===== HOA DON XUAT =====\n";
+                fiout << "===== HOA DON MUA =====\n";
                 fiout << "Ma hoa don: "<<hoadon.id_donhang<<endl;
                 fiout << "Ten sach: " << hoadon.ten<< endl;
                 fiout << "So luong: " << hoadon.soluong << endl;
@@ -56,7 +56,6 @@ void HanhVi::Mua() {
                 fiout << "TONG TIEN: " << fixed << setprecision(0) << hoadon.tien << " VND\n";
                 fiout << "Giao dich thanh cong! So luong ton kho da duoc cap nhat.\n";
                 dbd.database_push(hoadon);
-                dbd.database_show();
                 fiout.close();
             }
             break;
@@ -247,8 +246,8 @@ void HanhVi::thuesach() {
                 hoadon.tg = layThoigianHienTai();
                 hoadon.tien = hoadon.soluong * hoadon.dongia* songay;
                 cout<<"Hoa don da duoc xuat vui long kiem tra thong tin!\n";                   
-                remove("hoa_don_thue.txt");
-                ofstream fiout("hoa_don_thue.txt");
+                remove("hoa_don.txt");
+                ofstream fiout("hoa_don.txt");
                 fiout << "===== HOA DON THUE =====\n";
                 fiout << "Ma hoa don: "<<hoadon.id_donhang<<endl;
                 fiout << "Ten sach: " << hoadon.ten << endl;
@@ -298,4 +297,36 @@ void HanhVi::trasach(){
         cout << "Khong tim thay hoa don thue!" << endl;
     }
 
+}
+void HanhVi::Doanhthu(){
+    double doanhthu = 0, doanhthuthue = 0,doanhthumua = 0;
+    vector<mahanghoa>& danhsach = dbd.getDulieu();
+    cout << left
+         << setw(20) << "Ten sach"
+         << setw(10) << "SL"
+         << setw(15) << "Don gia"
+         << setw(15) << "Thanh tien" << endl;
+    for (int i = 0; i < (int)danhsach.size(); i++)
+    {
+        doanhthu += danhsach[i].tien;
+        if (danhsach[i].check == true) {
+            doanhthumua += danhsach[i].tien;
+            cout << left
+            << setw(20) << danhsach[i].ten
+            << setw(10) << danhsach[i].soluong
+            << setw(15) << fixed << setprecision(0) << danhsach[i].dongia
+            << setw(15) << fixed << setprecision(0) << danhsach[i].tien << endl;
+        }
+        else {
+            doanhthuthue += danhsach[i].tien;
+            cout << left
+                 << setw(20) << danhsach[i].ten
+                 << setw(10) << danhsach[i].soluong
+                 << setw(15) << fixed << setprecision(0) << danhsach[i].dongia
+                 << setw(15) << fixed << setprecision(0) << danhsach[i].tien << endl;
+        }
+    }
+    cout << "Doanh thu la: " << fixed << setprecision(0) << doanhthu << " VND\n";
+    cout << "Doanh thu tu mua sach: " << fixed << setprecision(0) << doanhthumua << " VND\n";
+    cout << "Doanh thu tu thue sach: " << fixed << setprecision(0) << doanhthuthue << " VND\n";
 }

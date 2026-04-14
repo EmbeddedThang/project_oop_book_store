@@ -1,24 +1,16 @@
 ===== HOA DON MUA =====
-Ma hoa don: 4923
-Ten sach: Sach 52
-So luong: 1
-Don gia:  50000
-Thoi gian: 14/4/2026 11:38:3
+Ma hoa don: 4041
+Ten sach: Sach 50
+So luong: 10
+Don gia:  150000
+Thoi gian: 14/4/2026 12:2:59
 ------------------------
-TONG TIEN: 50000 VND
-===== HOA DON MUA =====
-Ma hoa don: 4979
-Ten sach: Sach 48
-So luong: 2
-Don gia:  146000
-Thoi gian: 14/4/2026 11:38:20
-------------------------
-TONG TIEN: 292000 VND
+TONG TIEN: 1500000 VND
 ===== HOA DON THUE =====
-Ma hoa don: 5028
-Ten sach: Sach 52
-So luong: 9
-Don gia thue:  5000
-Thoi gian: 14/4/2026 11:38:35
+Ma hoa don: 4073
+Ten sach: Sach 49
+So luong: 4
+Don gia thue:  14800
+Thoi gian: 14/4/2026 12:3:9
 ------------------------
-TONG TIEN: 90000 VND
+TONG TIEN: 236800 VND

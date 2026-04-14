@@ -24,6 +24,7 @@ void staff::quanli()
         cout << "5. Tim sach theo tac gia\n";
         cout << "6. Xoa sach\n";
         cout << "7. Sua gia\n";
+        cout << "8. Doanh thu\n";
         cout << "0. Thoat\n";
         cout << "Chon: ";
         cin >> chon;
@@ -33,6 +34,7 @@ void staff::quanli()
             break;
         case 2:
             themsach();
+            xuatdata();
             break;
         case 3:
             timsachtheoten();
@@ -45,9 +47,14 @@ void staff::quanli()
             break;
         case 6:
             xoasach();
+            xuatdata();
             break;
         case 7:
             suagia();
+            xuatdata();
+            break;
+        case 8:
+            Doanhthu();
             break;
         case 0:
             cout << "Thoat chuong trinh.\n";
